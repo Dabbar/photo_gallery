@@ -1,21 +1,24 @@
 {
-    "name": "gridTest",
+    "name": "photo_gallery",
     "version": "1.0.0",
-    "description": "",
+    "description": "Photo Gallery",
     "main": "index.js",
     "scripts": {
-        "start": "./node_modules/.bin/parcel index.html ",
-        "build": "./node_modules/.bin/parcel build index.html  --public-url ./",
+        "start": "./node_modules/.bin/parcel src/index.html ",
+        "build": "./node_modules/.bin/parcel build src/index.html  --public-url ./ --no-cache",
         "lint:ts": "./node_modules/.bin/tslint --config tslint.json --project tsconfig.json",
         "deploy": "rm -rf dist && deploy-to-git"
     },
     "keywords": [],
-    "author": "",
+    "author": "Dabbar",
     "license": "ISC",
+    "dependencies": {
+        "babel-polyfill": "^6.26.0"
+    },
     "devDependencies": {
+        "@types/node": "^9.4.7",
         "autoprefixer": "^8.1.0",
         "babel": "^6.23.0",
-        "babel-polyfill": "^6.26.0",
         "babel-preset-env": "^1.6.1",
         "csscomb": "^4.2.0",
         "deploy-to-git": "^0.1.5",

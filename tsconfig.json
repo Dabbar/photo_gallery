@@ -3,7 +3,11 @@
         "experimentalDecorators": true,
         "strictFunctionTypes": true,
         "preserveConstEnums": true,
-        "strictPropertyInitialization": true
+        "strictPropertyInitialization": true,
+        "paths": {
+            "src/*": ["src/*"]
+        },
+        "lib": ["es6", "dom"]
     },
     "include": ["scripts/**/*.ts"],
     "exclude": ["node_modules"]
