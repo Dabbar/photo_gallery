@@ -1,0 +1,40 @@
+{
+    "name": "gridTest",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "./node_modules/.bin/parcel index.html ",
+        "build": "./node_modules/.bin/parcel build index.html  --public-url ./",
+        "lint:ts": "./node_modules/.bin/tslint --config tslint.json --project tsconfig.json",
+        "deploy": "rm -rf dist && deploy-to-git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "autoprefixer": "^8.1.0",
+        "babel": "^6.23.0",
+        "babel-polyfill": "^6.26.0",
+        "babel-preset-env": "^1.6.1",
+        "deploy-to-git": "^0.1.5",
+        "node-sass": "^4.7.2",
+        "parcel-bundler": "^1.6.2",
+        "prettier": "^1.11.1",
+        "tslint": "^5.9.1",
+        "typescript": "^2.7.2"
+    },
+    "config": {
+        "deployToGit": {
+            "repository": "git@github.com:Dabbar/gh-pages-test.git",
+            "branch": "gh-pages",
+            "folder": "dist",
+            "script": "npm run build",
+            "commit": "Build.",
+            "user": {
+                "email": "xzanich@gmail.com",
+                "name": "Dabbar"
+            }
+        }
+    }
+}

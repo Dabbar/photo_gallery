@@ -1,0 +1,84 @@
+{
+    "extends": ["tslint:recommended"],
+    "rules": {
+        "strict-boolean-expressions": true,
+        "use-isnan": true,
+        "indent": [true, "spaces", 4],
+        "arrow-return-shorthand": false,
+        "space-before-function-paren": [
+            true,
+            {
+                "anonymous": "always",
+                "named": "never",
+                "asyncArrow": "always"
+            }
+        ],
+        "no-bitwise": false,
+        "ban-types": [
+            true,
+            ["Object", "Use 'object' instead."],
+            ["Boolean", "Use 'boolean' instead."],
+            ["Number", "Use 'number' instead."],
+            ["String", "Use 'string' instead."]
+        ],
+        "object-literal-key-quotes": false,
+        "jsx-no-multiline-js": false,
+        "no-string-literal": false,
+        "jsx-no-lambda": false,
+        "no-shadowed-variable": false,
+        "prefer-const": false,
+        "comment-format": false,
+        "no-namespace": false,
+        "array-type": [true, "array"],
+        "max-line-length": [true, 130],
+        "new-parens": true,
+        "no-arg": true,
+        "no-conditional-assignment": false,
+        "no-consecutive-blank-lines": [true, 2],
+        "quotemark": [true, "single", "jsx-double"],
+        "no-var-requires": false,
+        "trailing-comma": [
+            true,
+            {
+                "multiline": "never",
+                "singleline": "never"
+            }
+        ],
+        "unified-signatures": false,
+        "prefer-for-of": false,
+        "curly": false,
+        "max-classes-per-file": [false],
+        "object-literal-sort-keys": false,
+        "no-empty-interface": false,
+        "ordered-imports": false,
+        "only-arrow-functions": false,
+        "no-console": [false],
+        "callable-types": false,
+        "member-ordering": [
+            true,
+            {
+                "order": [
+                    "private-static-field",
+                    "protected-static-field",
+                    "public-static-field",
+                    "private-static-method",
+                    "protected-static-method",
+                    "public-static-method",
+                    "private-instance-field",
+                    "protected-instance-field",
+                    "public-instance-field",
+                    "private-constructor",
+                    "protected-constructor",
+                    "public-constructor",
+                    "private-instance-method",
+                    "protected-instance-method",
+                    "public-instance-method"
+                ]
+            }
+        ]
+    },
+    "jsRules": {
+        "no-console": false,
+        "quotemark": [true, "single", "jsx-double"]
+    }
+}

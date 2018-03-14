@@ -1,0 +1,17 @@
+@import './bootstrap-reboot.min.css';
+
+body {
+    display: flex;
+
+    width: 100vw;
+    height: 100vh;
+
+    background: linear-gradient(rgb(115, 80, 228), rgb(87, 30, 194));
+}
+
+h1 {
+    margin: auto;
+
+    color: whitesmoke;
+    text-shadow: 2px 2px 10px rgb(136, 136, 161);
+}
