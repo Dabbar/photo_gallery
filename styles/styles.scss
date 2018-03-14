@@ -1,17 +1,199 @@
 @import './bootstrap-reboot.min.css';
+@import 'mixins';
+@import 'variables';
 
 body {
+    position: relative;
+
     display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 
     width: 100vw;
     height: 100vh;
+    padding: 10px;
 
-    background: linear-gradient(rgb(115, 80, 228), rgb(87, 30, 194));
+    background: $background-color;
 }
 
-h1 {
-    margin: auto;
+* {
+    font-family: 'Lato', Arial, sans-serif;
+}
 
-    color: whitesmoke;
-    text-shadow: 2px 2px 10px rgb(136, 136, 161);
+header {
+    text-align: center;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    max-width: 1170px;
+    margin: 0 auto;
+    margin-top: 20px;
+
+    .image-wrapper {
+        position: relative;
+        z-index: 1;
+
+        width: 360px;
+        height: 260px;
+        margin-top: 5px;
+        margin-right: 5px;
+
+        transition: box-shadow 0.7s ease;
+        transform: scale(0.5);
+
+        opacity: 0;
+        border-radius: 3px;
+
+        &:hover {
+            box-shadow: inset 0 0 1px 250px rgba($main-color, 0.8);
+            .btn-wrapper .open-modal-btn {
+                display: block;
+            }
+        }
+
+        &:nth-of-type(1) {
+            background: url('../images/1.jpg');
+        }
+        &:nth-of-type(2) {
+            background: url('../images/2.jpg');
+        }
+        &:nth-of-type(3) {
+            background: url('../images/3.jpg');
+        }
+        &:nth-of-type(4) {
+            background: url('../images/4.jpg');
+        }
+        &:nth-of-type(5) {
+            background: url('../images/5.jpg');
+        }
+        &:nth-of-type(6) {
+            background: url('../images/6.jpg');
+        }
+
+        .btn-wrapper {
+            @include stretch();
+
+            display: flex;
+
+            .open-modal-btn {
+                position: relative;
+                z-index: 2;
+
+                display: none;
+
+                margin: auto;
+
+                cursor: pointer;
+                transition: transform 0.2s ease-in;
+
+                border: 2px solid white;
+                border-radius: 5px;
+                box-shadow: 3px 3px 10px darken($main-color, 20%);
+
+                &:hover {
+                    transform: scale(1.07);
+                }
+            }
+        }
+    }
+}
+
+.modal-wrapper {
+    @include stretch();
+
+    z-index: 3;
+
+    display: none;
+
+    background-color: rgba(0, 0, 0, 0.7);
+
+    &.visible {
+        display: flex;
+    }
+
+    .modal-content {
+        position: relative;
+
+        width: $full-width;
+        height: $full-height;
+        margin: auto;
+
+        transition: transform 0.3s ease;
+        transform: scale(0);
+
+        @media screen and (max-width: 1140px) {
+            width: $full-width / 1.3;
+            height: $full-height / 1.3;
+        }
+        @media screen and (max-width: 860px) {
+            width: $full-width / 1.7;
+            height: $full-height / 1.7;
+        }
+        @media screen and (max-width: 700px) {
+            width: $full-width / 2.2;
+            height: $full-height / 2.2;
+        }
+
+        @media screen and (max-width: 620px) {
+            width: 360px;
+            height: 260px;
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            visibility: hidden;
+
+            width: inherit;
+            height: auto;
+
+            &.visible {
+                visibility: visible;
+            }
+        }
+
+        .close-modal-btn {
+            position: absolute;
+            top: -$modal-btn-size/2;
+            right: $modal-btn-size;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: $modal-btn-size;
+            height: $modal-btn-size;
+
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+
+            color: white;
+            border-radius: 1px;
+            background-color: $main-color;
+
+            &:hover {
+                background-color: red;
+            }
+        }
+    }
+}
+
+@keyframes appear {
+    from {
+        transform: scale(0.8);
+
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+
+        opacity: 1;
+    }
 }
