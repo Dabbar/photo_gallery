@@ -1,6 +1,8 @@
- {
-        "plugins": {
-            "autoprefixer": true
+{
+    "plugins": {
+        "postcss-flexbugs-fixes": true,
+        "autoprefixer": {
+            "flexbox": "no-2009"
         }
+    }
 }
-
