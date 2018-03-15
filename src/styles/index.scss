@@ -2,6 +2,14 @@
 @import 'mixins';
 @import 'variables';
 
+.browserupgrade {
+    margin: 10px;
+    padding: 10px;
+
+    color: white;
+    background: red;
+}
+
 body {
     @include flex-center;
 
@@ -14,6 +22,7 @@ body {
 
     background: $background-color;
 }
+
 
 header {
     text-align: center;
